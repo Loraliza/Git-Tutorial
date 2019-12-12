@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Handling events in IE8 and earlier </title>
+  <style>
+	span {
+		cursor: pointer;
+	}
+  </style>
+  <script>
+
+window.onload = function() {
+	var div = document.getElementById("clickme");
+	if (div.addEventListener) {
+		div.addEventListener("click", handleClick, false);
+	} else if (div.attachEvent) {
+		div.attachEvent("click", handleClick);
+	}
+
+    var click = document.getElementById("clickme");
+    if (click.addEventListener) {
+        click.addEventListener("mouseover", mouseHandler, false);
+    } else if (click.attachEvent) {
+        click.attachEvent("mouseover", mouseHandler);
+    }
+
+    var mouse = document.getElementById("mouse");
+    if(mouse.addEventListener){
+       mouse.addEventListener("mouseover", mouseHandler, false);
+    }else if(mouse.attachEvent){
+       mouse.attachEvent("mouseover", mouseHandler);
+  }
+};
+
+function handleClick(e) {
+	var evt = e || window.event;
+	var target;
+	if (evt.target) {
+		target = evt.target;
+	} else {
+		target = evt.srcElement;
+	}
+	alert("You clicked on " + target.id);
+}
+
+function mouseHandler(m) {
+  var evt = m || window.event;
+  var target;
+  if (evt.target){
+    target = evt.target;
+  }else {
+    target = evt.srcElement;
+  }
+  alert("Your mouse is on " + target.id);
+}
+
+  </script>
+</head>
+<body>
+<span id="clickme">Click me!</span>
+<div id="mouse">Look! A mouse! :O</div>
+</body>
+</html>
