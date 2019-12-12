@@ -1,0 +1,65 @@
+body{
+    font-family:Arial, Verdana, sans-serif;
+    background-color: lightcyan;
+}
+
+h1, h2{
+    color:blue;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 4.0em;
+}
+
+ul, ol{
+    font-size: 0.8em;
+    display: inline-block;
+    border:1px solid#000;
+    color: darkgrey;
+    padding: 20px 20px 20px 50px;
+}
+
+.normal{
+    text-indent: 20px;
+}
+
+figure{
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.copyright_notice{
+    font-size: 0.8em;
+}
+
+#special{
+    font-size: 0.8em;
+    color: yellowgreen;
+    font-style: italic;
+    border-left: 2px solid black;
+    margin-left: 40px;
+    padding-left: 10px;
+}
+
+p#aboutBasic{
+    color: darkviolet;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.example{
+    margin-left: 50px;
+    margin-right: 500px;
+    background-color: #0b77b7;
+    color: white;
+    padding: 10px;
+}
+
+p::first-letter{
+    font-size: 8em;
+}
+
+p::first-letter{
+    font-weight: bold;
+}
