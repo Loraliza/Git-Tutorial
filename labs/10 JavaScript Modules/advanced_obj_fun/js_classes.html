@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coffee Constructor</title>
+<script>
+
+function Coffee(roast, ounces) {
+	this.roast = roast;
+	this.ounces = ounces;
+	this.getSize = function() {
+		if (this.ounces === 8) {
+			return "small";
+		} else if (this.ounces === 12) {
+			return "medium";
+		} else if (this.ounces === 16) {
+			return "large";
+		}
+	};
+	this.order = function() {
+		var msg;
+		switch (this.getSize()) {
+			case "small":
+			case "medium":
+			case "large":
+				msg = "You've ordered a " + this.getSize() + " " + this.roast + " coffee.";
+				break;
+			default:
+				msg = "We don't have a " + this.roast + " in that size!";
+				break;
+		}
+		return msg;
+	};
+    this.sip = function () {
+        console.log("Hmm tasty!");
+    }
+}
+
+function Tea(type, ounces) {
+    this.type = type;
+    this.ounces = ounces;
+    this.getSleepTime = function () {
+        if (this.ounces === 4) {
+            return "4 hours";
+        } else if (this.ounces === 8) {
+            return "8 hours";
+        } else if (this.ounces === 12) {
+            return "12 hours";
+        }
+    };
+    this.order = function () {
+        var message;
+        switch (this.getSleepTime()) {
+            case "4 hours":
+            case "8 hours":
+            case "12 hours":
+                message = "You've ordered a " + this.getSleepTime() + " of sleep with " + this.type + " tea.";
+                break;
+            default:
+                message = "We don't have a " + this.type + " tea!";
+                break;
+        }
+        return message;
+    };
+    this.sip = function () {
+        console.log("Hmm tasty!");
+    }
+}
+
+var coffee = new Coffee("House Blend", 12);
+console.log(coffee.order());
+
+var darkRoast = new Coffee("Dark Roast", 16);
+console.log(darkRoast.order());
+
+var specialBlend = new Coffee("Special Blend", 200);
+console.log(specialBlend.order());
+
+var teaCamomille = new Tea("Camomille", 8);
+console.log(teaCamomille.order());
+
+var chai = new Tea("Chai", 6);
+console.log(chai.order());
+
+chai.sip();
+coffee.sip();
+
+</script>
+</head>
+<body>
+</body>
+</html>
+
