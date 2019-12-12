@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!-- kehitysversio, jossa hyödyllistä infoa konsolissa -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <p>----------------------------------------</p>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p> Length of the message: {{count}}</p>
+        <input v-model="message" placeholder="Write here">
+    </div>
+    <p>----------------------------------------</p>
+    <div id="app-3">
+        <p><span v-if="seen">Now you see me</span></p>
+        <button v-on:click=toggle()>Näytä/Piilota</button>
+    </div>
+    <p>----------------------------------------</p>
+    <div id="app-4">
+        <button v-on:click=backward()>-</button>
+        <button v-on:click=reset()>0</button>
+        <button v-on:click=forward()>+</button>
+        <p>Current playback speed is {{speed}}</p>
+    </div>
+    <p>----------------------------------------</p>
+    <div id="app-5">
+        <p>TO-DO</p>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+        <p><input v-model=item placeholder="Write a task"></p>
+        <p>
+            <button v-on:click=add() type="submit">Add new task</button>
+            <button v-on:click=remove() type="submit">Remove the first task</button>
+        </p>
+    </div>
+    <p>----------------------------------------</p>
+    <div id="app-6">
+        <p>TO-DO</p>
+        <ul>
+            <li v-for="(item, index) in list">{{item}}
+                <button v-on:click=remove(index) type="submit">Delete task</button>
+            </li>
+        </ul>
+        <p><input v-model=item placeholder="Write a task"></p>
+        <p>
+            <button v-on:click=add() type="submit">Add new task</button>
+        </p>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: "Hello World!"
+            }
+        },
+        computed: {
+            count(){
+                return this.message.length;
+            }
+        }
+    });
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            seen: true
+        },
+        methods: {
+            toggle: function () {
+                this.seen = !this.seen;
+            }
+        }
+    });
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            speed: 0
+        },
+        methods: {
+            forward: function () {
+                this.speed += 1;
+            },
+            reset: function () {
+                this.speed = 0;
+            },
+            backward: function () {
+                this.speed -= 1;
+            }
+        }
+    });
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            item: "",
+            list: []
+        },
+        methods: {
+            add: function () {
+                this.list.push(this.item);
+            },
+            remove: function () {
+                this.list.shift();
+            }
+        }
+    });
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            item: "",
+            list: []
+        },
+        methods: {
+            add: function () {
+                this.list.push(this.item);
+            },
+            remove: function (index) {
+                this.list.splice(index, 1);
+            }
+        }
+    })
+</script>
+</html>
