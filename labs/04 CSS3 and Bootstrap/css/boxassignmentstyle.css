@@ -1,0 +1,65 @@
+body{
+    font-family: "Arial Unicode MS", sans-serif;
+    text-align: center;
+}
+
+h1{
+    font-size: 100px;
+    margin: 5px;
+}
+
+img{
+    border: 3px solid lightblue;
+}
+
+figcaption{
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    padding: 1px;
+    padding-top: 20px;
+}
+
+italic{
+    font-style: italic;
+}
+
+italic2{
+    font-style: italic;
+    font-size: 16px;
+}
+
+p{
+    font-size: 35px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+.blueberry, .cloudberry, .lingonberry{
+    border-top: 1px solid black;
+    margin-left: 470px;
+    margin-right: 470px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    line-height: 15pt;
+}
+
+.blueberry{
+    background-color: rgba(173, 216, 230, 0.6);
+    margin-top: 50px;
+}
+
+.cloudberry{
+    background-color: rgba(255, 228, 196, 0.6);
+}
+
+.lingonberry{
+    background-color: rgba(205, 92, 92, 0.6);
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+}
+
+
+
+
