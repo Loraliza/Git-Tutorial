@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Object-o-matic</title>
+  <script>
+	function makeCar() {
+		var makes = ["Chevy", "GM", "Fiat", "Webville Motors", "Tucker"];
+		var models = ["Cadillac", "500", "Bel-Air", "Taxi", "Torpedo"];
+		var years = [1955, 1957, 1948, 1954, 1961];
+		var colors = ["red", "blue", "tan", "yellow", "white"];
+		var convertible = [true, false];
+
+		var rand1 = Math.floor(Math.random() * makes.length);
+		var rand2 = Math.floor(Math.random() * models.length);
+		var rand3 = Math.floor(Math.random() * years.length);
+		var rand4 = Math.floor(Math.random() * colors.length);
+		var rand5 = Math.floor(Math.random() * 5);
+		var rand6 = Math.floor(Math.random() * 2);
+
+      var carEngine = makeEngine();
+
+		var car = {
+			make: makes[rand1],
+			model: models[rand2],
+			year: years[rand3],
+			color: colors[rand4],
+			passengers: rand5,
+			convertible: convertible[rand6],
+			mileage: 0,
+            engine: carEngine
+		};
+
+		return car;
+	}
+
+	function displayCar(car) {
+		console.log("Your new car is a " + car.year + " " + car.make + " " + car.model + '\n' +
+                    "This car engine has a " + car.engine.cylinder + " cylinder, " + car.engine.ccVolume + " volume, " +
+                    "uses " + car.engine.fuel + " and has " + car.engine.maxTorque + " of torque.");
+	}
+
+	function makeEngine() {
+      var cylinders = ["Single-Acting", "Double-Acting", "Nondifferential", "Telescoping", "Ram-type"];
+      var ccVolumes = ["1000cc", "900cc", "1200cc", "500cc"];
+      var fuel = ["Gasoline", "Diesel", "Bio-Diesel", "Liquefied Petroleum", "Ethanol"];
+      var maxTorque = ["258 lb-ft", "261 lb-ft", "294 lb-ft", "157 lb-ft"];
+
+      var rand1 = Math.floor(Math.random() * cylinders.length);
+      var rand2 = Math.floor(Math.random() * ccVolumes.length);
+      var rand3 = Math.floor(Math.random() * fuel.length);
+      var rand4 = Math.floor(Math.random() * maxTorque.length);
+
+      var engine = {
+        cylinder: cylinders[rand1],
+        ccVolume: ccVolumes[rand2],
+        fuel: fuel[rand3],
+        maxTorque: maxTorque[rand4],
+      };
+      return engine;
+    }
+
+	var carToSell = makeCar();
+	displayCar(carToSell);
+
+  </script>
+</head>
+<body></body>
+</html>
