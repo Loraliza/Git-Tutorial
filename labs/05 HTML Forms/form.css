@@ -1,0 +1,74 @@
+body{
+    font-family: "Arial Unicode MS", sans-serif;
+    background-color: lightcyan;
+}
+
+h1{
+    margin: 20px;
+    margin-right: 84%;
+    background-color: lightblue;
+    font-size: 50px;
+}
+
+legend{
+    font-weight: bold;
+    font-style: italic;
+}
+
+::placeholder{
+    font-style: italic;
+    color: blueviolet;
+}
+label{
+    color: #EE5757;
+}
+
+select{
+    color: orange;
+}
+
+input[type="submit"]{
+    alignment: center;
+}
+
+#field1, #field2{
+   margin: 20px;
+   margin-right: 0px;
+    float: left;
+}
+
+#field2{
+    height: 88px;
+}
+
+#field3{
+    margin: 20px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    width: 10%;
+    clear: both;
+}
+
+#field4, #field5{
+    margin: 20px;
+    margin-right: 0px;
+    float: left;
+}
+
+#field5{
+    width: 8%;
+}
+
+#field6{
+    clear: both;
+    text-align: center;
+    margin: 20px;
+    margin-right: 0px;
+    width: 8%;
+
+}
+
+fieldset{
+    width: 25%;
+    background-color: white;
+}
